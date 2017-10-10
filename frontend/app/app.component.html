@@ -1,0 +1,12 @@
+
+<div *ngIf="!isCheckOutPage">
+    <app-header-fixtop [isLoggedIn]="isLoggedIn$ | async" *ngIf="isFixedHeaderShown"> </app-header-fixtop>
+    <app-header [logoImg]="logoImg" [isLoggedIn]="isLoggedIn$ | async"> </app-header>
+    <app-content> </app-content>
+    <app-footer> </app-footer>
+</div>
+
+<div *ngIf="isCheckOutPage"> 
+    <router-outlet></router-outlet>
+</div>
+

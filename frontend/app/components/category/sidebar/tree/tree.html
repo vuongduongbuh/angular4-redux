@@ -1,0 +1,27 @@
+<div class="block cate-menu-content">
+    <h3>{{categories?.name}}</h3>
+    <ul class="categories-tree" *ngIf="!categories.selectedSubcat">
+        <li (click)="selectCategory(category, $event)" [ngClass]="{'active': category?.isSelected}" 
+            *ngFor="let category of categories?.children_data">
+            <a>{{category?.name}} </a>
+
+            <ul class="categories-tree" *ngIf="category?.isSelected">
+                <li (click)="selectSubcat(subcat, $event)" *ngFor="let subcat of category?.children_data">
+                    <a title="Áo Thun ">{{subcat?.name}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="categories-tree" *ngIf="categories.selectedSubcat">
+        <li class="active current">
+            <a (click)="selectCategory(categories.selectedParentCategory, $event)">{{categories.selectedParentCategory.name}}</a>
+        </li>
+
+        <ul class="categories-tree">
+            <li (click)="selectSubcat(subcat, $event)" [ngClass]="{'active': categories.selectedSubcat.id == subcat.id}" *ngFor="let subcat of categories.selectedParentCategory.children_data">
+                <a title="Áo Thun ">{{subcat.name}}</a>
+            </li>
+        </ul>
+    </ul>
+</div>

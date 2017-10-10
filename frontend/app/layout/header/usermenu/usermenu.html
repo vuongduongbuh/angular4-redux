@@ -1,0 +1,164 @@
+<ul class="user-menu lt-user-menu">
+    <li class="cart-menu" (mouseover)="isItemAddedSuccessfully = false">
+        <a class="action showcart" href="javascript:void(0)">
+            <span class="icon icon-cart"></span>
+            <span class="counter qty empty">
+            <span class="counter-number">{{(cartInfo$ | async).items_qty}}</span>
+            </span>
+        </a>
+
+        <div class="dropdown-list view-notification" [ngClass]="{'state--visible': isItemAddedSuccessfully}">
+            <div class="dropdown-inner">
+                <div class="notification-text">
+                    Thêm vào giỏ hàng thành công
+                    <a href="javascript:void();" class="btn-close-note" (click)="isItemAddedSuccessfully=false">
+					    Đóng		      		
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown-list view-cart">
+            <div data-block="minicart" class="dropdown-inner">
+
+                <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front mage-dropdown-dialog" tabindex="-1" role="dialog"
+                    aria-describedby="ui-id-1" style="display: none;">
+                    <div class="block block-minicart empty ui-dialog-content ui-widget-content" data-role="dropdownDialog" id="ui-id-1">
+                        <div id="minicart-content-wrapper">
+
+                            <div class="block-content">
+
+                                <div class="mini-cart-product-list">
+                                    <div class="minicart-items-wrapper" *ngIf="(cartItemsCount$ | async) > 0">
+                                        <ol id="mini-cart" class="minicart-items">
+                                            <li class="item product product-item odd last" *ngFor="let item of cartItems$ | async">
+                                                <div class="product">
+                                                    <a class="product-item-photo">
+                                                        <span class="product-image-container" style="width: 75px;">
+                                                            <span class="product-image-wrapper"style="padding-bottom: 130.667%;">
+                                                                <img class="product-image-photo" [src]="assetUrl + item.image" style="width: 75px; height: 98px;">
+                                                            </span>
+                                                        </span>
+                                                    </a>
+
+                                                    <div class="product-item-details">
+                                                        <div class="detail-item-desc">
+                                                            <strong class="product-item-name">
+                                                                <a>{{item.name}}</a>
+                                                            </strong>
+                                                        </div>
+
+                                                        <div class="product-item-pricing">
+                                                            <div class="details-qty qty">
+                                                                <span class="item-qty cart-item-qty" id="cart-item-1215557-qty">{{item.qty | number: '1.0-0' }}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="price-item-block">
+                                                    <div class="price-container">
+                                                        <span class="price-wrapper">
+                                                        <span class="price-including-tax">
+                                                            <span class="minicart-price">
+                                                            <span class="price">{{item.price | number:'3.0-0'}} &nbsp;Đ</span>
+                                                        </span>
+                                                        </span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="mini-cart-sum" *ngIf="(cartItemsCount$ | async) > 0">
+                                        <div class="items-total">
+                                            <strong><span>Tổng giá tiền</span></strong>
+                                            <span class="count-text">
+                                                (<span class="count">{{(cartInfo$ | async).items_qty}}</span>
+                                            <span>Sản phẩm</span>)
+                                            </span>
+                                        </div>
+                                        <div class="price-total"><span class="price">{{(cartInfo$ | async).base_subtotal | number:'3.0-0'}}&nbsp;Đ</span></div>
+                                    </div>
+                                    <strong class="subtitle empty" *ngIf="(cartItemsCount$ | async) == 0">Chưa có sản phẩm nào trong giỏ hàng của bạn</strong>
+                                </div>
+
+                                <div class="mini-cart-action" *ngIf="(cartItemsCount$ | async) > 0">
+                                    <div class="actions">
+                                        <div class="secondary">
+                                            <a class="action viewcart" routerLink="/checkout">
+                                                <span>Xem và chỉnh sửa giỏ hàng</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+
+    </li>
+
+
+    <!-- BLOCK header_wishlist -->
+    <li class="wishlist-menu">
+        <a class="login-link" href="javascript:void(0);">
+            <span class="icon icon-wishlist"></span>
+            <span class="empty-wishlist counter-number">0</span>
+        </a>
+        <!--<div class="dropdown-list view-wishlist">
+            <div class="dropdown-inner">
+                <div class="empty-wishlist">
+                    Chưa có sản phẩm nào trong Danh sách yêu thích </div>
+            </div>
+        </div>-->
+        <div class="dropdown-list view-wishlist">
+            <div class="dropdown-inner">
+                <div class="wishlist-items">
+
+                    <div class="field-item">
+                        <div class="field-img">
+                            <img src="https://d1710i1dsqwesz.cloudfront.net/media/catalog/product/cache/1/small_image/50x/925f46717e92fbc24a8e2d03b22927e1/1/0/1055_1493263191_xiaomi-mi4-white.jpg"
+                                alt="Xiaomi Mi 4 Ram 3GB Rom 16GB (Trắng) - Hãng phân phối chính thức">
+                        </div>
+                        <div class="field-title">Xiaomi Mi 4 Ram 3GB Rom 16GB (Trắng) - Hãng phân phối chính thức</div>
+                        <div class="field-button">
+                            <button class="action tocart" type="button" title="Mua ngay">
+                        <span>Mua ngay</span>
+                    </button>
+                        </div>
+                    </div>
+
+                    <a class="link-bottom" href="https://www.lotte.vn/wishlist/">Danh sách yêu thích của tôi</a>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    <!-- /BLOCK header_wishlist -->
+    <li class="login-menu">
+        <a href="javascript:void(0);" class="login-link">
+            <span class="icon icon-login"></span>
+            <span class="txt" *ngIf="!isLoggedIn" (click)="showLoginModal()">Đăng nhập</span>
+            <span class="txt" *ngIf="isLoggedIn">Hi, {{(userInfo$ | async).firstname + ' ' + (userInfo$ | async).lastname}}</span>
+        </a>
+
+        <div class="dropdown-list view-account" *ngIf="isLoggedIn">
+            <div class="dropdown-inner">
+                <ul class="list-menu">
+                    <li class="nav item"><a>Danh sách đơn hàng</a></li>
+                    <li class="logout-link authorization-link" data-label="hoặc">
+                        <a (click)="logout()"> Đăng xuất </a>
+                    </li>
+                    <li><a href="https://www.lotte.vn/customer/account/">Quản lý tài khoản</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </li>
+
+
+</ul>

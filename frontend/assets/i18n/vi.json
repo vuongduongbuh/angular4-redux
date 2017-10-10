@@ -1,0 +1,47 @@
+{
+    "CATEGORY": {
+        "BTN": {
+
+        },
+        "TXT": {
+
+        },
+        "MSG": {
+
+        }
+    },
+
+    "PRODUCT": {
+        "BTN": {
+
+        },
+        "TXT": {
+
+        },
+        "MSG": {
+
+        }
+    },
+    "CHECKOUT": {
+        "BTN": {
+
+        },
+        "TXT": {
+
+        },
+        "MSG": {
+
+        }
+    },
+    "PROMOTION": {
+        "BTN": {
+
+        },
+        "TXT": {
+
+        },
+        "MSG": {
+            
+        }
+    }
+}

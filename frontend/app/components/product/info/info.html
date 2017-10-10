@@ -1,0 +1,61 @@
+<div class="product info detailed lt-product-info">
+    <div class="product data items">
+        <div class="data item title" [ngClass]="{'active': isInfoTab}" id="tab-label-additional">
+            <a class="data switch" (click)="isInfoTab = true">
+                Xem thêm thông tin                    
+            </a>
+        </div>
+
+        <div class="data item title" [ngClass]="{'active': !isInfoTab}" id="tab-label-additional">
+            <a class="data switch" (click)="isInfoTab = false">
+                Nhận xét           
+            </a>
+        </div>
+
+        <div class="data item content" *ngIf="isInfoTab">
+            <div class="additional-attributes-wrapper table-wrapper">
+                <div class="product-attributes">
+                    <div class="product-item-data">
+                        <div class="col sku-info">Thông số sản phẩm</div>
+                        <div class="col sku">SKU: 313-0296010</div>
+                    </div>
+
+                    <div class="data table additional-attributes" id="product-attribute-specs-table">
+                        <div class="row-item">
+                            <div class="col label" scope="row">Xuất xứ thương hiệu</div>
+                            <div class="col data" data-th="Xuất xứ thương hiệu">Việt Nam</div>
+                        </div>
+
+                        <div class="row-item">
+                            <div class="col label" scope="row">Chất liệu</div>
+                            <div class="col data" data-th="Chất liệu">Cotton mềm, nhẹ, co giãn 4 chiều , thấm hút mồ hôi, bền màu</div>
+                        </div>
+
+                        <div class="row-item">
+                            <div class="col label" scope="row">Quy cách sản phẩm</div>
+                            <div class="col data" data-th="Quy cách sản phẩm">1 x Sản phẩm</div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="data-description"> 
+                    <tbody> 
+                        <tr> 
+                            <th>Thông số sản phẩm </th>
+                        </tr>
+
+                        <tr> 
+                            <h2><strong style="font-size: 12px;">SƠ MI ĐỎ ĐÔ HỌA TIẾT HOA VĂN</strong></h2>
+                            <p>Quan điểm quần áo màu sắc chỉ dành cho nữ giới dường như đã quá xưa rồi khi mà những chiếc áo màu sắc cũng góp phần thể hiện nét độc đáo cá tính rất riêng trong phong cách của đấng mày râu. Chiếc áo sơ mi đỏ đô họa tiết hoa văn là một trong những chiếc áo mà cánh nam giới nên có trong tủ đồ của mình. Bài viết dưới đây sẽ đem lại cho bạn một cái nhìn hoàn toàn mới và giúp cho phái mạnh tìm kiếm phong cách trẻ trung mới lạ hơn cho tủ quần áo tạo phong cách trẻ trung riêng có cho phái mạnh.</p>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="data item content" *ngIf="!isInfoTab"> 
+
+        </div>
+
+    </div>
+</div>

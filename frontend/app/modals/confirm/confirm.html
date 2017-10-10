@@ -1,0 +1,17 @@
+<div class="lt-modal-dialog lt-modal-dialog--small lt-confirm-modal">
+    <div class="lt-modal-dialog__header">
+        <h1 class="lt-modal-dialog__header--title">Xác nhận</h1>
+        <button class="lt-modal-dialog__header--close" type="button" (click)="closeModal()">
+
+        </button>
+    </div>
+    <div class="lt-modal-dialog__content lt-confirm-modal__content">
+        Những thông tin bạn đã điền sẽ bị xóa mất. Bạn có muốn tiếp tục?
+    </div>
+
+    <div class="lt-modal-dialog__footer lt-confirm-modal__footer"> 
+        <button class="lt-btn lt-btn--cancel" (click)="closeModal()"> Từ Bỏ </button>
+
+        <button class="lt-btn lt-btn--red lt-btn--confirm" (click)="confirm()">OK</button>
+    </div>
+</div>

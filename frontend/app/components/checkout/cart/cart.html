@@ -1,0 +1,191 @@
+<div class="cart table-wrapper lt-checkout-cart">
+    <table id="shopping-cart-table" class="cart items data table lt-checkout-cart__table">
+        <thead>
+            <tr>
+                <th class="col item" scope="col"><span>Sản phẩm</span></th>
+                <th class="col supplier" scope="col"><span>Nhà cung cấp/Vận chuyển</span></th>
+                <th class="col price" scope="col"><span>Giá</span></th>
+                <th class="col qty" scope="col"><span>Số lượng</span></th>
+                <th class="col subtotal" scope="col" colspan="2"><span>Thành tiền</span></th>
+            </tr>
+        </thead>
+
+        <tbody class="cart item">
+            <tr class="item-info" *ngFor="let item of cartItems$ | async">
+                <td class="col item">
+                    <a>
+                        <img width="60" [src]="assetUrl + item.image">
+                    </a>
+
+                    <div class="product-item-details">
+                        <a class="product-item-brand"><span>{{item?.extension_attributes?.brand_name}}</span></a>
+
+                        <strong class="product-item-name">
+                            <a href="https://www.lotte.vn/ipad-gen5-2017-wi-fi-32gb-mpgt2-vang-hang-chinh-hang-304651.html">
+                                {{item.name}}
+                            </a>
+                        </strong>
+                    </div>
+                </td>
+
+                <td class="col supplier">
+                    <div class="supplier-info">
+                        <span class="vendor-logo">
+                            <a>
+                                <img src="https://d1710i1dsqwesz.cloudfront.net/media/logo/default/departogo_2x.png" alt="">
+                            </a>
+                        </span>
+
+                        <p id="shipping-duration-standard-1168992" class="shipping-duration-standard">
+                            <span class="shipper">Standard</span>
+                            <span class="text">{{(cartShippingInfo$ | async).rule[0] + '-' + (cartShippingInfo$ | async).rule[1]}} ngày</span>
+                        </p>
+                    </div>
+                </td>
+
+                <td class="col price">
+                    <span class="cart-price"><span class="price">{{item.base_price | number:'1.0-0'}}&nbsp;Đ</span></span>
+                    <span class="cart-price old-price"><span class="price" *ngIf="item?.extension_attributes?.min_price !== item?.extension_attributes?.original_price">9.500.000&nbsp;Đ</span></span>
+                    <span class="discount discount--decrease" *ngIf="item?.extension_attributes?.min_price !== item?.extension_attributes?.original_price">Giảm giá 16% </span>
+                </td>
+
+                <td class="col qty">
+                    <div class="field qty">
+                        <div class="control qty">
+                            <button type="button" [disabled]="item.new_qty == 1" class="btn-decrease" (click)="changeItemInCart('-', item)">-</button>
+                            <input value="{{item.new_qty?item.new_qty:item.qty}}" type="number" size="4" class="input-text qty">
+                            <button type="button" class="btn-increase" (click)="changeItemInCart('+', item)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="update-cart" *ngIf="item.new_qty && item.new_qty !=item.qty">
+                        <button type="button" (click)="updateCart(item)" class="small action dark update update">
+                            <span>Cập nhật</span>
+                        </button>
+                    </div>
+                </td>
+
+                <td class="col subtotal">
+                    <div class="subtotal-price">
+                        <span class="price-excluding-tax">
+                        <span class="cart-price">
+                            <span class="price">{{item.base_row_total | number:'1.0-0'}}&nbsp;Đ</span>                        </span>
+                        </span>
+                    </div>
+
+                    <p>
+                        <a class="small button wishlist"><span>Yêu thích</span></a>
+                    </p>
+                </td>
+            </tr>
+
+            <!--<tr class="gift-row">
+                <td colspan="5">
+                    <div class="gift-inner">
+                        <strong>Quà tặng</strong>
+                        <div class="gift-info">
+                            01 phiếu tập 30 ngày tại California Fitness &amp; Yoga cho đơn hàng các sản phẩm của nhà cung cấp Lotte Department Store
+                            (mỗi đơn hàng được tặng tối đa 01 phiếu)<br>
+                        </div>
+                    </div>
+                </td>
+                <td class="actions-toolbar">
+                    <div class="actions-toolbar-inner">
+                        <a href="#" title="Remove item" class="action action-delete">
+                            <i class="action-close"></i>
+                            <span class="hide">
+                                Remove item                
+                            </span>
+                        </a>
+                    </div>
+                </td>
+            </tr>-->
+
+        </tbody>
+    </table>
+
+    <div class="cart-shipping-total clearfix">
+        <div class="shipping-estimating">
+            <label>Khu vực giao hàng: </label>
+            <div class="select-box">
+                <select name="region_id" [(ngModel)]="regionId" (change)="selectArea(regionId, 0)">
+                    <option selected="selected" disabled>Tỉnh/Thành phố</option>
+                    <option value="{{city.id}}" *ngFor="let city of commonCities$ | async">{{city.name}}</option>
+                </select>
+                <div class="free-shipping" *ngIf="regionId == 1086">
+                    <p>
+                        <span class="icon-info"></span>
+                        <span id="free-shipping-message">
+                        Bạn được <span class="price">miễn phí vận chuyển</span> </span>
+                    </p>
+                </div>
+            </div>
+            <div class="select-box">
+                <select name="district_id" [(ngModel)]="districtId" [disabled]="!(commonDistricts$ | async)[0]" (change)="selectArea(regionId, districtId)">
+                    <option disabled selected="selected">Quận/ Huyện</option>
+                    <option value="{{district.id}}" *ngFor="let district of commonDistricts$ | async">{{district.name}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="total-cart-custom">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label>Tổng giá tiền</label></td>
+                        <td>
+                            <span id="total-cart">
+                         <span class="price">{{(cartInfo$ | async).base_subtotal | number:'1.0-0'}}&nbsp;Đ</span>                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Phí vận chuyển tạm tính</label></td>
+                        <td>
+                            <span id="shipping-fee">
+                         <span class="price">{{(cartInfo$ | async).base_shipping_amount | number:'1.0-0'}}&nbsp;Đ</span>                            </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none">
+                        <td><label>Giảm giá</label></td>
+                        <td>
+                            <span id="discount-amount">
+                        <span class="price">0&nbsp;Đ</span> </span>
+                        </td>
+                    </tr>
+                    <tr class="total">
+                        <td>
+                            <label>Tổng giá tiền tạm tính</label><br><span>(Đã bao gồm VAT)</span>
+                        </td>
+                        <td>
+                            <span id="grand-total">
+                        <span class="price">{{(cartInfo$ | async).base_subtotal_with_discount | number:'1.0-0'}}&nbsp;Đ</span>                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <ul class="checkout methods items checkout-methods-items">
+        <li>
+            <a class="action continue" href="https://www.lotte.vn/" title="Quay lại">
+                <span>Quay lại</span>
+            </a>
+            <input type="hidden" value="" id="update_cart_action_container" data-cart-item-update="">
+        </li>
+        <li class="item">
+            <button type="button" (click)="goToNextStep()" class="action primary login-link-checkout checkout">
+                <span>Tiến hành Thanh toán</span>
+            </button>
+        </li>
+        <li class="item">
+        </li>
+    </ul>
+</div>
+
+<div class="cart-empty" [hidden]="1">
+    <p class="empty-cart">Chưa có sản phẩm nào trong giỏ hàng của bạn</p>
+    <p>Hãy nhanh tay sở hữu những sản phẩm ưa thích của bạn.</p>
+    <a title="Tiếp tục mua sắm" routerLink="/" class="button action continue primary">
+        Tiếp tục mua sắm    </a>
+</div>

@@ -1,0 +1,86 @@
+<div class="toolbar toolbar-products">
+    <div class="toolbar-sorter sorter">
+        <select class="sorter-options" [disabled]="(isLoading$ | async)">
+            <option value="" selected="selected">
+                Sắp Xếp Theo
+            </option>
+            <option value="product_list_order=name&amp;product_list_dir=asc">
+                Tên sản phẩm A - Z
+            </option>
+
+            <option value="product_list_order=name&amp;product_list_dir=desc">
+                Tên sản phẩm Z - A                
+            </option>
+            <option value="product_list_order=price&amp;product_list_dir=asc">
+            Giá Thấp Đến Cao                
+            </option>
+
+            <option value="product_list_order=price&amp;product_list_dir=desc">
+            Giá Cao Đến Thấp                
+            </option>
+            <option value="product_list_order=new">
+                Mới                
+            </option>
+            <option value="product_list_order=yotpo_rating">
+                Đánh Giá                
+            </option>
+        </select>
+    </div>
+
+    <div class="toolbar-pager pager">
+        <div class="pages">
+            <strong class="label pages-label" id="paging-label">Page</strong>
+            <ul class="items pages-items" aria-labelledby="paging-label">
+
+                <li class="item pages-item-first" [ngClass]="{'disabled' : (isLoading$ | async)}" (click)="selectPage(1)">
+                    <a class="action first" title="First Page">
+                        <span class="label">Page</span>
+                        <span>1</span>
+                    </a>
+                </li>
+
+                <li class="item pages-item-previous" [ngClass]="{'disabled' : (isLoading$ | async)}" (click)="selectPage(currentPage - 1)">
+                    <a class="action previous" title="Trước đó">
+                        <span class="label">Page</span>
+                        <span>Trước đó</span>
+                    </a>
+                </li>
+
+
+                <li class="item" *ngFor="let page of pages$ | async" (click)="selectPage(page)" [ngClass]="{'disabled' : (isLoading$ | async)}">
+                    <a class="page" [ngClass]="{'action active': page == (filter$ | async).page}">
+                        <span class="label">Page</span>
+                        <span>{{page}}</span>
+                    </a>
+                </li>
+
+
+                <li class="item pages-item-next" [ngClass]="{'disabled' : (isLoading$ | async)}" (click)="selectPage(currentPage + 1)">
+                    <a class="action next" title="Tiếp tục">
+                        <span class="label">Page</span>
+                        <span>&gt;</span>
+                    </a>
+                </li>
+
+                <li class="item pages-item-last next-last-item" [ngClass]="{'disabled' : (isLoading$ | async) || currentPage == (pages$ | async).length}" (click)="selectPage(1)">
+                    <a class="action last" title="Last Page">
+                        <span class="label">Page</span>
+                        <span>104</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="field limiter">
+        <span class="total-items">Số sản phẩm trên trang</span>
+        <div class="control">
+            <select data-role="limiter" [disabled]="(isLoading$ | async)" name="currentPageSize" [(ngModel)]="currentPageSize" class="limiter-options" (change)="selectPageSize(currentPageSize)">
+                <option [value]="value" *ngFor="let value of [40, 80, 120]" [disabled]="value === ($filter | async)?.pageSize">
+                    {{value}}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>

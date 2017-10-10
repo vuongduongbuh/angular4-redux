@@ -1,0 +1,111 @@
+<div class="payment-method group-2 promotion" style="display: block">
+    <div class="payment-method-title field choice">
+        <input type="radio" name="payment" class="radio" id="vietin_gateway_promotion3" value="vietin_gateway_promotion3">
+        <label class="label" for="vietin_gateway_promotion3">
+            <span >Giảm 25% khi thanh toán bằng thẻ quốc tế hạng Bạch Kim từ BIDV ,tối đa 400.000vnd. Áp dụng cho đơn hàng từ 500,000 vnd</span>
+            <span class="payment-view-detail">
+                <a target="_blank" href="https://www.lotte.vn/promotions/uu-dai-ngan-hang-bidv">chi tiết</a>
+                <span class="tooltip">(Không áp dụng đồng thời với Mã Giảm Giá và sản phẩm Sữa bột).</span>
+            </span>
+        </label>
+    </div>
+</div>
+
+<div class="payment-method group-2 _active" style="display: block;">
+    <div class="payment-method-title field choice">
+        <input type="radio" name="payment[method]" class="radio" id="vietin_gateway" value="vietin_gateway">
+        <label class="label" for="vietin_gateway">
+            <span>Tiêu chuẩn - Thanh toán bằng thẻ quốc tế VISA, MASTERCARD, JCB</span>
+            <span class="payment-view-detail">
+            </span>
+        </label>
+    </div>
+
+    <div class="payment-method-content newCard">
+        <div class="use_new_cc_card" id="div_vietin_gateway">
+            <div class="cc_card_left">
+                <div class="field number required vietin-field card-number" (click)="description = 1">
+                    <label class="label" for="vietin_gateway_card_number">
+                        <span><span>Số thẻ</span></span>
+                    </label>
+
+                    <div class="control vietin-control">
+                        <input type="number" name="payment[card_number]" class="input-text" value="" id="vietin_gateway_card_number" title="Số thẻ">
+                    </div>
+                </div>
+
+                <div class="field type required vietin-field card-name" (click)="description = 2">
+                    <label class="label" for="vietin_gateway_card_type">
+                        <span><span>Chủ thẻ</span></span>
+                    </label>
+                    <div class="control">
+                        <div class="control vietin-control ">
+                            <input type="text" name="payment[card_name]" class="input-text" title="Card name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field date required vietin-field">
+                    <label class="label" for="vietin_gateway_expiration">
+                        <span><span>Ngày hết hạn</span></span>
+                    </label>
+
+                    <div class="control vietin-expiry-control">
+                        <div class="fields group group-2">
+                            <div class="field no-label month vietin-select-date" style="display: block !important;" (click)="description = 3">
+                                <div class="control">
+                                    <select class="select select-month" id="vietin_gateway_expiration"> 
+                                        <option> Chọn tháng</option>
+                                        <option value="10"> 10</option>
+                                        <option value="11"> 11</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="field no-label year vietin-select-date" style="display: block !important;" (click)="description = 3">
+                                <div class="control">
+                                    <select class="select select-year" id="vietin_gateway_expiration_yr"> 
+                                        <option>Chọn năm</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field number required vietin-field" (click)="description = 4">
+                    <label class="label" for="vietin_gateway_card_cvn">
+                        <span><span>CCV / CVV</span></span>
+                    </label>
+
+                    <span class="button-guideline">guideline</span>
+
+                    <div class="control vietin-control clear-fix">
+                        <input type="number" name="payment[card_cvn]" class="input-text" maxlength="3" id="vietin_gateway_card_cvn" title="CCV / CVV">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cc_card_right">
+                <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/SM_PaymentGateway/images/card_number_hint.png"
+                    *ngIf="description == 1">
+
+                    <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/SM_PaymentGateway/images/card_holder_hint.png"
+                        *ngIf="description == 2">
+
+                        <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/SM_PaymentGateway/images/card_expire_hint.png"
+                            *ngIf="description == 3">
+
+                            <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/SM_PaymentGateway/images/card_cvn_hint.png"
+                                *ngIf="description == 4">
+
+                                <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/SM_PaymentGateway/images/card_accept_hint.png"
+                                    *ngIf="!description">
+            </div>
+        </div>
+
+        <lt-checkout-payment-address> </lt-checkout-payment-address>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<div class="navbar-cates" (mouseleave)="toggleNavbarDropdown('close')">
+    <a class="navbar-link {{isOpenMainNav}}" href="javascript:void(0);" (click)="toggleNavbarDropdown('open')">
+        <span class="navbar-toggle"> 
+                <span class="icon-bar">&nbsp;</span>
+        <span class="icon-bar">&nbsp;</span>
+        <span class="icon-bar">&nbsp;</span>
+        </span>
+        <span class="txt">Tất cả danh mục</span>
+    </a>
+    <div class="mega-menu">
+        <div class="inner-menu">
+            <ul class="quicktabs">
+                <li (mouseenter)="onMouseHoverMegaMenu('#qt-0', $event)"><a class="logo-1"><span>Lotte.vn</span></a></li>
+                <li (mouseenter)="onMouseHoverMegaMenu('#qt-1', $event)"><a class="logo-2"><span>Lotte Department Store</span></a></li>
+                <li (mouseenter)="onMouseHoverMegaMenu('#qt-2', $event)"><a class="logo-3"><span>Lotte Mart</span></a></li>
+                <li (mouseenter)="onMouseHoverMegaMenu('#qt-3', $event)"><a class="logo-4"><span>Lotte Homeshopping</span></a></li>
+            </ul>
+            <div class="mega-wrap">
+                <div class="mega-content active" id="qt-0">
+                    <div class="row clearfix">
+                        <div class="col col-4">
+                            <h3><a title="Sức Khỏe &amp; Làm Đẹp">Sức Khỏe &amp; Làm Đẹp</a></h3>
+                            <ul>
+                                <li><a title="Trang Điểm">Trang Điểm</a></li>
+                            </ul>
+                            <h3><a title="Giày, Túi &amp; Phụ Kiện">Giày, Túi &amp; Phụ Kiện</a></h3>
+                            <ul>
+                                <li><a title="Giày Nữ">Giày Nữ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Thời Trang Nữ">Thời Trang Nữ</a></h3>
+                            <ul>
+                                <li><a title="Áo">Áo</a></li>
+                            </ul>
+                            <h3><a title="Thời Trang Nam">Thời Trang Nam</a></h3>
+                            <ul>
+                                <li><a title="Áo Thun">Áo Thun</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Mẹ &amp; Bé">Mẹ &amp; Bé</a></h3>
+                            <ul>
+                                <li><a title="Tã &amp; Vệ Sinh">Tã &amp; Vệ Sinh </a></li>
+                            </ul>
+                            <h3><a title="Đời Sống &amp; Điện Gia Dụng">Đời Sống &amp; Điện Gia Dụng</a></h3>
+                            <ul>
+                                <li><a title="Gia Dụng Nhỏ">Gia Dụng Nhỏ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Điện Tử">Điện Tử</a></h3>
+                            <ul>
+                                <li><a title="Điện Thoại &amp; Máy Tính Bảng">Điện Thoại &amp; Máy Tính Bảng</a></li>
+                            </ul>
+                            <h3><a title="Thực Phẩm, Sức Khỏe &amp; Tiêu Dùng">Thực Phẩm, Sức Khỏe &amp; Tiêu Dùng</a></h3>
+                            <ul>
+                                <li><a title="Sữa tươi &amp; Sữa bột">Sữa tươi &amp; Sữa bột</a></li>
+                            </ul>
+                            <h3><a title="Thể Thao &amp; Du Lịch">Thể Thao &amp; Du Lịch</a></h3>
+                            <ul>
+                                <li><a title="Thời Trang Thể Thao">Thời Trang Thể Thao</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mega-content" id="qt-1">
+                    <div class="row clearfix">
+                        <div class="col col-4">
+                            <h3><a title="Sức Khỏe &amp; Làm Đẹp">Sức Khỏe &amp; Làm Đẹp</a></h3>
+                            <ul>
+                                <li><a title="Trang Điểm">Trang Điểm</a></li>
+                            </ul>
+                            <h3><a title="Bé Sơ Sinh, Trẻ Em &amp; Đố Chơi">Trẻ Em &amp; Đồ Chơi</a></h3>
+                            <ul>
+                                <li><a title="Đồ Chơi Cho Bé">Đồ Chơi Cho Bé</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Thời Trang Nữ">Thời Trang Nữ</a></h3>
+                            <ul>
+                                <li><a title="Áo">Áo</a></li>
+                            </ul>
+                            <h3><a title="Thời Trang Nam">Thời Trang Nam</a></h3>
+                            <ul>
+                                <li><a title="Áo Thun Nam">Áo Thun Nam</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Giày, Túi &amp; Phụ Kiện">Giày, Túi &amp; Phụ Kiện</a></h3>
+                            <ul>
+                                <li><a title="Giày">Giày</a></li>
+                            </ul>
+                            <h3><a title="Thể Thao &amp; Du Lịch">Thể Thao &amp; Du Lịch</a></h3>
+                            <ul>
+                                <li><a title="Thời Trang Thể Thao">Thời Trang Thể Thao</a></li>
+                            </ul>
+                            <h3><a title="Nhà Cửa &amp; Đời Sống">Nhà Cửa &amp; Đời Sống</a></h3>
+                            <ul>
+                                <li><a title="Nhà Bếp">Nhà Bếp</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Điện Gia Dụng">Đời Sống &amp; Điện Gia Dụng</a></h3>
+                            <ul>
+                                <li><a title="Đồ Dùng Làm Đẹp">Đồ Dùng Làm Đẹp</a></li>
+                            </ul>
+                            <h3><a title="Điện Tử">Điện Tử</a></h3>
+                            <ul>
+                                <li><a title="Điện Thoại Máy Tính Bảng">Điện Thoại Máy Tính Bảng</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Department store -->
+                <!-- LotteMart -->
+                <div class="mega-content" id="qt-2">
+                    <div class="row clearfix">
+                        <div class="col col-4">
+                            <h3><a title="Sữa &amp; Sản Phẩm Từ Sữa">Sữa &amp; Sản Phẩm Từ Sữa</a></h3>
+                            <ul>
+                                <li><a title="Sữa Tươi &amp; Sữa Đặc">Sữa Tươi &amp; Sữa Đặc</a></li>
+                                <li><a title="Sữa Bột">Sữa Bột</a></li>
+                            </ul>
+                            <h3><a title="Nước Giải Khát &amp; Dinh Dưỡng">Nước Giải Khát &amp; Dinh Dưỡng</a></h3>
+                            <ul>
+                                <li><a title="Cà Phê">Cà Phê</a></li>
+                            </ul>
+                            <h3><a title="Ăn Vặt, Ngũ Cốc &amp; Bánh Kẹo">Ăn Vặt, Ngũ Cốc &amp; Bánh Kẹo</a></h3>
+                            <ul>
+                                <li><a title="Bánh Kẹo Truyền Thống">Bánh Kẹo Truyền Thống</a></li>
+                            </ul>
+                            <h3><a title="Gia Vị &amp; Phụ Liệu Nấu Ăn">Gia Vị &amp; Phụ Liệu Nấu Ăn</a></h3>
+                            <ul>
+                                <li><a title="Đường, Muối &amp; Gia Vị">Đường, Muối &amp; Gia Vị</a></li>
+                            </ul>
+                            <h3><a title="Thời Trang">Thời Trang</a></h3>
+                            <ul>
+                                <li><a title="Thời Trang Nữ">Thời Trang Nữ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Làm Đẹp &amp; Chăm Sóc Cá Nhân">Làm Đẹp &amp; Chăm Sóc Cá Nhân</a></h3>
+                            <ul>
+                                <li><a title="Combo Sức Khỏe &amp; Làm Đẹp">Combo Sức Khỏe &amp; Làm Đẹp</a></li>
+                            </ul>
+                            <h3><a title="Sơ Sinh &amp; Chăm Sóc Bé">Sơ Sinh &amp; Chăm Sóc Bé</a></h3>
+                            <ul>
+                                <li><a title="Tã &amp; Vệ Sinh">Tã &amp; Vệ Sinh</a></li>
+                            </ul>
+                            <h3><a title="Giặt Giũ &amp; Chất Tẩy Rửa">Giặt Giũ &amp; Chất Tẩy Rửa</a></h3>
+                            <ul>
+                                <li><a title="Giặt Ủi">Giặt Ủi</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4">
+                            <h3><a title="Chăm Sóc Nhà Cửa">Chăm Sóc Nhà Cửa</a></h3>
+                            <ul>
+                                <li><a title="Giấy Vệ Sinh">Giấy Vệ Sinh</a></li>
+                            </ul>
+                            <h3><a title="Đồ Dùng &amp; Dụng Cụ Nhà Bếp">Đồ Dùng &amp; Dụng Cụ Nhà Bếp</a></h3>
+                            <ul>
+                                <li><a title="Chảo, Nồi &amp; Làm Bánh">Chảo, Nồi &amp; Làm Bánh</a></li>
+                            </ul>
+                            <h3><a title="Điện Gia Dụng &amp; Nhà Bếp">Điện Gia Dụng &amp; Nhà Bếp</a></h3>
+                            <ul>
+                                <li><a title="Dụng Cụ Làm Đẹp">Dụng Cụ Làm Đẹp</a></li>
+                            </ul>
+                            <h3><a title="Thú Cưng, Làm Vườn &amp; Giải Trí">Thú Cưng, Làm Vườn &amp; Giải Trí</a></h3>
+                            <ul>
+                                <li><a title="Chăm Sóc Thú Cưng">Chăm Sóc Thú Cưng</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-4 ">
+                            <h3><a title="Thực Phẩm Khô &amp; Đồ Hộp">Thực Phẩm Khô &amp; Đồ Hộp</a></h3>
+                            <ul>
+                                <li><a title="Thịt &amp; Cá Hộp">Thịt &amp; Cá Hộp</a></li>
+                            </ul>
+                            <h3><a title="Choice-L">Choice-L</a></h3>
+                            <ul>
+                                <li><a title="Choice-L Đỏ">Choice-L Đỏ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End LotteMart -->
+                <!-- homeshopping -->
+                <div class="mega-content" id="qt-3">
+                    <div class="row clearfix ">
+                        <ul class="hs-banners ">
+                            <li>
+                                <a title="Mỹ Phẩm " href="/lottemarthomeshopping/lam-dep/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-3.jpg " alt=" "><span>Mỹ Phẩm</span></a>
+                            </li>
+                            <li>
+                                <a title="Thời Trang " href="/lottemarthomeshopping/thoi-trang/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-4.jpg " alt=" "><span>Thời Trang</span></a>
+                            </li>
+                            <li>
+                                <a title="Thể Thao &amp; Sức Khỏe " href="/lottemarthomeshopping/the-thao-suc-khoe/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-5.jpg " alt=" "><span>Thể Thao &amp; Sức Khỏe</span></a>
+                            </li>
+                            <li>
+                                <a title="Nhà Cửa Đời Sống " href="/lottemarthomeshopping/nha-cua-doi-song/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-6.jpg " alt=" "><span>Nhà Cửa Đời Sống</span></a>
+                            </li>
+                            <li>
+                                <a title="Điện Gia Dụng " href="/lottemarthomeshopping/dien-gia-dung/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-7.jpg " alt=" "><span>Điện Gia Dụng</span></a>
+                            </li>
+                            <li>
+                                <a title="Điện Tử " href="/lottemarthomeshopping/electronic/ " target="_blank ">
+                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/static/vec/megamenu/hs-8.jpg " alt=" "><span>Điện Tử</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end homeshopping -->
+            </div>
+        </div>
+    </div>
+</div>

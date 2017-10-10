@@ -1,0 +1,51 @@
+<section class="section-breadcrumb">
+    <div class="container-v">
+        <ul class="content">
+            <li class=" home">
+                <a href="https://staging.lotte.vn/" title="Đến trang chủ">LOTTE.VN</a>
+            </li>
+            <li class="subcate" *ngIf="categories">
+                <a>{{categories?.name}}</a>
+                <span class="arrow"></span>
+
+                <div class="subcate-content">
+                    <ul class="inner">
+                        <li *ngFor="let category of categories?.children_data">
+                            <a>{{category.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="subcate" *ngIf="categories?.selectedParentCategory">
+                <a>{{categories.selectedParentCategory.name}}</a>
+                <span class="arrow"></span>
+
+                <div class="subcate-content">
+                    <ul class="inner">
+                        <li *ngFor="let category of categories.children_data" [hidden]="category.id == categories.selectedParentCategory.id">
+                            <a>{{category.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="subcate" *ngIf="categories?.selectedSubcat">
+                <a>{{categories.selectedSubcat.name}}</a>
+                <span class="arrow"></span>
+
+                <div class="subcate-content">
+                    <ul class="inner">
+                        <li *ngFor="let subcat of categories.selectedParentCategory.children_data" [hidden]="subcat.id == categories.selectedSubcat.id">
+                            <a>{{subcat.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!--<li class="product">
+                Áo sơ mi nam dài tay Aligro ALGS077 ( màu xanh da trời)
+            </li>-->
+        </ul>
+    </div>
+</section>

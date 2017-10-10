@@ -1,0 +1,48 @@
+
+<div class="products-grid products-list clearfix" style="position: relative; min-height: 300px;">
+      
+    <div class="product-media" *ngIf="isLoading$ | async">
+        <div class="loading">Loading</div>
+     </div>
+
+    <div class="item-product" (click)="goProductDetail(product)" *ngFor="let product of products$ | async; let idx = index">
+        <div class="inner" *ngIf="!(isLoading$ | async)">
+            <div class="product-image">
+                <a>
+                    <img class="photo image" [src]="assetUrl + product.custom_attributes[3].value"
+                        width="240" height="312">
+                </a>
+                <div class="btn-actions">
+                    <form data-role="tocart-form">
+                        <button type="button" (click)="addToCart(product, $event)" title="Thêm vào giỏ hàng" [ngClass]="{'adding': isItemAddedToCart}" class="action tocart primary action-redirect">
+                            <span>Thêm vào giỏ hàng</span>
+                        </button>
+                    </form>
+
+                    <form data-role="tocart-form">
+                        <button type="button" title="Mua" class="action buy-cart primary" (click)="checkout(product, $event)">
+                        <span>Mua</span>
+                    </button>
+                    </form>
+
+                    <div class="stock unavailable" *ngIf="product.outOfStock"><span>Hết hàng</span></div>
+                </div>
+            </div>
+            <div class="product-info">
+                <h4>{{product.extension_attributes?.brand_name}}</h4>
+                <p class="product-name">
+                    <a class="product-item-link" title="Áo thun nam có cổ (xám) - Adam">{{product.name}}</a>
+                </p>
+                <div class="price-box price-final_price" data-role="priceBox" data-product-id="214587">
+                    <p class="special-price">
+                        <span class="current-price">
+                            <span id="product-price-214587" data-price-amount="245000" data-price-type="finalPrice" class="final-price ">
+                                {{product.price | number: '3.0-0'}}&nbsp;Đ 
+                            </span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

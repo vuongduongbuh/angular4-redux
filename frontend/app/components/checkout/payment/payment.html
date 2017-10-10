@@ -1,0 +1,147 @@
+<div class="checkout-container lt-payment" id="checkout">
+    <div class="opc-wrapper">
+        <ol class="opc" id="checkoutSteps">
+            <li id="payment" class="checkout-payment-method">
+                <div id="checkout-step-payment" class="step-content">
+                    <form id="co-payment-form" class="form payments group-1">
+                        <fieldset class="fieldset">
+                            <div class="payment-option _collapsible opc-payment-additional discount-code">
+                                <div class="payment-option-title field choice">
+                                    <span class="action action-toggle"> 
+                                        <span>Áp dụng mã giảm giá</span>
+                                    </span>
+                                </div>
+
+                                <div class="payment-option-content">
+                                    <form class="form form-discount" id="discount-form">
+                                        <div class="field-title">
+                                            <label class="label" for="discount-code">
+                                                <span>Mã giảm giá</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="payment-option-inner">
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input class="input-text" type="text" id="discount-code" name="discount_code">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="actions-toolbar">
+                                            <div class="primary">
+                                                <button class="action action-apply" type="button">
+                                                    <span><span>Áp dụng</span></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="step-title">Lựa chọn hình thức thanh toán</div>
+
+                            <ul class="option-tabs list-inline lt-payment__methods">
+                                <li>
+                                    <label for="cashondelivery" (click)="selectPaymentType(1)" [ngClass]="{'active': paymentType == 1 }" class="lt-payment-option lt-payment-option--cash">
+                                        Thanh Toán Tiền Mặt
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="vietin_gateway" (click)="selectPaymentType(2)" [ngClass]="{'active': paymentType == 2 }" class="lt-payment-option lt-payment-option--card">
+                                        Thẻ tín dụng/ Ghi nợ
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="local_atm" (click)="selectPaymentType(3)" [ngClass]="{'active': paymentType == 3 }" class="lt-payment-option lt-payment-option--atm">
+                                        Thẻ ATM Nội địa
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="vietin_gateway_installment" (click)="selectPaymentType(4)" [ngClass]="{'active': paymentType == 4 }" class="lt-payment-option lt-payment-option--installment">
+                                        Trả Góp 0%
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div id="checkout-payment-method-load" class="opc-payment">
+                                <div class="items payment-methods">
+                                    <lt-checkout-payment-by-cash *ngIf="paymentType == 1"> </lt-checkout-payment-by-cash>
+                                    <lt-checkout-payment-by-card *ngIf="paymentType == 2"> </lt-checkout-payment-by-card>
+                                    <lt-checkout-payment-by-atm *ngIf="paymentType == 3"> </lt-checkout-payment-by-atm>
+                                    <lt-checkout-payment-by-installment *ngIf="paymentType == 4"> </lt-checkout-payment-by-installment>
+                                </div>
+                            </div>
+
+                            <div class="shipping-custom">
+                                <div class="vat-additional-info">
+                                    <form id="vat-info-form" class="form">
+                                        <fieldset class="fieldset">
+                                            <div class="vat-info-title">
+                                                <input id="vat-info-checbox" [(ngModel)]="isRequiredRedBill" type="checkbox" name="company-info-select">
+                                                <label for="vat-info-checbox">Thông tin yêu cầu Hóa đơn đỏ</label>
+                                            </div>
+
+                                            <div class="vat-info-content bg-white-fog form-2col" *ngIf="isRequiredRedBill">
+                                                <div class="add-billing-form">
+                                                    <ul class="form-group">
+                                                        <li class="field required">
+                                                            <label class="label" for="NROY2LP">
+                                                                <span>Tên công ty</span>
+                                                            </label>
+                                                            <div class="control">
+                                                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                                                            </div>
+                                                        </li>
+                                                        <li class="field required">
+                                                            <label class="label" for="NROY2LP">
+                                                                <span>Địa chỉ công ty</span>
+                                                            </label>
+                                                            <div class="control">
+                                                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                                                            </div>
+                                                        </li>
+                                                        <li class="field required">
+                                                            <label class="label" for="NROY2LP">
+                                                                <span>Mã số thuế</span>
+                                                            </label>
+                                                            <div class="control">
+                                                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="actions-toolbar lt-payment__actions-toolbar">
+                                <button type="button" (click)="backToPreviousStep()" class="back-link button-back action">
+                                    <span><span>Quay lại</span></span>
+                                </button>
+
+                                <button class="action primary checkout" type="button" (click)="submitPayment()" title="Thanh Toán">
+                                    <span >Thanh Toán</span>
+                                </button>
+                            </div>
+
+                            <div class="payment-note">
+                                <span> 
+                                    Bằng cách nhấn vào nút Thanh Toán, bạn đồng ý với 
+                                    <a target="_blank" href="https://www.lotte.vn/chinh-sach-bao-mat/">Chính sách bảo mật</a>
+                                     và 
+                                     <a target="_blank" href="https://www.lotte.vn/dieu-kien-va-dieu-khoan/">Điều khoản sử dụng</a>
+                                      của LOTTE.vn.
+                                </span>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <lt-checkout-order> </lt-checkout-order>
+</div>

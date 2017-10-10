@@ -1,0 +1,252 @@
+<div class="opc-wrapper lt-checkout-shipping-form">
+    <div class="opc" id="checkoutSteps">
+        <li id="shipping" class="checkout-shipping-address">
+            <h3 class="step-title">
+                <span>Địa chỉ nhận hàng</span>
+                <span class="note">(* bắt buộc)</span>
+            </h3>
+
+            <form id="checkout-step-shipping" class="step-content" #customerForm="ngForm" (ngSubmit)="goToNextStep(customerForm)" novalidate>
+                <div class="list-option">
+                    <div class="form form-login form-2col">
+                        <fieldset id="customer-email-fieldset" class="fieldset form-group">
+                            <div class="field required">
+                                <label class="label">
+                                        <span>Địa chỉ Email</span>
+                                    </label>
+
+                                <div class="control _with-tooltip">
+                                    <input class="input-text" [ngClass]="{'mage-error': guestEmail.invalid && (guestEmail.dirty || guestEmail.touched) && guestEmail.errors.required}"
+                                        [(ngModel)]="addressInfomation.shippingAddress.email" type="email" #guestEmail="ngModel"
+                                        name="guestEmail" id="customer-email" required>
+                                        <div class="mage-error" *ngIf="guestEmail.invalid && (guestEmail.dirty || guestEmail.touched) && guestEmail.errors.required">Vui lòng nhập dữ liệu.</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <div class="form form-shipping-address form-2col" id="co-shipping-form">
+                    <div id="shipping-new-address-form" class="fieldset address form-group">
+                        <div class="field required">
+                            <label class="label">
+                                    <span>Tên</span>
+                                </label>
+
+                            <div class="control">
+                                <input class="input-text" [ngClass]="{'mage-error': firstName.invalid && (firstName.dirty || firstName.touched) && firstName.errors.required}"
+                                    name="firstName" #firstName="ngModel" type="text" [(ngModel)]="addressInfomation.shippingAddress.firstName"
+                                    required>
+                                    <div class="mage-error" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched) && firstName.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label class="label">
+                                    <span>Họ</span>
+                                </label>
+
+                            <div class="control">
+                                <input class="input-text" [ngClass]="{'mage-error': lastName.invalid && (lastName.dirty || lastName.touched) && lastName.errors.required}"
+                                    name="lastName" #lastName="ngModel" type="text" [(ngModel)]="addressInfomation.shippingAddress.lastName"
+                                    required>
+                                    <div class="mage-error" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched) && lastName.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label class="label">
+                                    <span>Số điện thoại</span>
+                                </label>
+
+                            <div class="control">
+                                <input class="input-text" [ngClass]="{'mage-error': phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched) && phoneNumber.errors.required}"
+                                    name="phoneNumber" #phoneNumber="ngModel" type="text" [(ngModel)]="addressInfomation.shippingAddress.telephone"
+                                    required>
+                                    <span class="note">Nhân viên giao nhận LOTTE.VN sẽ liên hệ với SĐT này.</span>
+                                    <div class="mage-error" *ngIf="phoneNumber.invalid && (phoneNumber.dirty || phoneNumber.touched) && phoneNumber.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label class="label">
+                                    <span>E-mail</span>
+                                </label>
+
+                            <div class="control">
+                                <input class="input-text" [ngClass]="{'mage-error': orderEmail.invalid && (orderEmail.dirty || orderEmail.touched) && orderEmail.errors.required}"
+                                        name="orderEmail" type="text" #orderEmail="ngModel" [(ngModel)]="addressInfomation.shippingAddress.email_address" required>
+                                <div class="mage-error" *ngIf="orderEmail.invalid && (orderEmail.dirty || orderEmail.touched) && orderEmail.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field" name="shippingAddress.is_home">
+                            <div class="control">
+                                <div class="choice field plchoice">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" [(ngModel)]="addressInfomation.shippingAddress.is_home" id="home-add" name="isHome" class="checkbox plcheckbox">
+                                            <label class="label pllabel" for="home-add">
+                                                <span>Nhà</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" [(ngModel)]="addressInfomation.shippingAddress.is_home" id="office-add" name="isHome" class="checkbox plcheckbox">
+                                            <label class="label pllabel" for="office-add">
+                                                <span>Văn phòng</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <fieldset class="field street required">
+                            <legend class="label">
+                                <span>Địa chỉ (tầng, số nhà, đường)</span>
+                            </legend>
+                            <div class="control">
+                                <div class="field" name="shippingAddress.street.0">
+                                    <div class="control">
+                                        <input class="input-text" [ngClass]="{'mage-error': street.invalid && (street.dirty || street.touched) && street.errors.required}"
+                                                type="text" #street="ngModel" name="street" [(ngModel)]="addressInfomation.shippingAddress.street[0]" required>
+                                        <div class="mage-error" *ngIf="street.invalid && (street.dirty || street.touched) && street.errors.required">Vui lòng nhập dữ liệu.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field required" name="shippingAddress.region_id">
+                            <label class="label">
+                                    <span>Tỉnh / Thành phố</span>
+                                </label>
+                            <div class="control">
+                                <select class="select" [ngClass]="{'mage-error': city.invalid && (city.dirty || city.touched) && city.errors.required}"
+                                        name="city" #city="ngModel" [(ngModel)]="addressInfomation.shippingAddress.region_id" required (change)="selectArea(addressInfomation.shippingAddress.region_id, 0)"> 
+                                    <option value="{{city.id}}" *ngFor="let city of commonCities$ | async">{{city.name}}</option>
+                                </select>
+
+                                <div class="mage-error" *ngIf="city.invalid && (city.dirty || city.touched) && city.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field required" name="shippingAddress.region_id">
+                            <label class="label">
+                                    <span>Quận / Huyện</span>
+                                </label>
+                            <div class="control">
+                                <select class="select" [ngClass]="{'mage-error': district.invalid && (district.dirty || district.touched) && district.errors.required}"
+                                    name="district" #district="ngModel" [disabled]="!(commonDistricts$ | async)[0]" (change)="selectArea(0, addressInfomation.shippingAddress.district_id)"
+                                    [(ngModel)]="addressInfomation.shippingAddress.district_id" required>
+                                    <option value="{{district.id}}" *ngFor="let district of commonDistricts$ | async">{{district.name}}</option>
+                                </select>
+                                <div class="mage-error" *ngIf="district.invalid && (district.dirty || district.touched) && district.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field required" name="shippingAddress.region_id">
+                            <label class="label">
+                                    <span>Phường, xã</span>
+                                </label>
+                            <div class="control">
+                                <select class="select" [ngClass]="{'mage-error': ward.invalid && (ward.dirty || ward.touched) && ward.errors.required}"
+                                    name="ward" #ward="ngModel" [disabled]="!(commonWards$ | async)[0]" [(ngModel)]="addressInfomation.shippingAddress.ward_id"
+                                    required>
+                                    <option value="{{ward.id}}" *ngFor="let ward of commonWards$ | async">{{ward.name}}</option>
+                                </select>
+
+                                <div class="mage-error" *ngIf="ward.invalid && (ward.dirty || ward.touched) && ward.errors.required">Vui lòng nhập dữ liệu.</div>
+                            </div>
+                        </div>
+
+                        <div class="field" name="shippingAddress.shipping_comments">
+                            <div class="control">
+                                <div class="c-checkout-form--comments">
+                                    <label class="label pllabel"> 
+                                            <span>Ghi chú</span>
+                                        </label>
+
+                                    <textarea maxlength="50" name="note" [(ngModel)]="addressInfomation.shippingAddress.shipping_comments"> </textarea>
+
+                                    <div class="limit-characters">
+                                        <span class="number">0</span> /50 <span> ký tự</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="shipping-custom">
+                    <div class="customer-additional-info">
+                        <div id="custom-checkout-shipping-form" class="form">
+                            <fieldset class="fieldset">
+                                <div class="customer-info-title">
+                                    <input id="shipping-info-checbox" type="checkbox" name="sameAddress" [(ngModel)]="addressInfomation.shippingAddress.sameAsBilling">
+                                    <label for="shipping-info-checbox">Thông tin người đặt hàng khác với thông tin người nhận hàng</label>
+                                </div>
+
+                                <div class="customer-info-content bg-white-fog form-2col" *ngIf="addressInfomation.shippingAddress.sameAsBilling">
+                                    <div class="add-billing-form">
+                                        <ul class="form-group">
+                                            <div class="field required">
+                                                <label class="label">
+                                                    <span>Tên</span>
+                                                </label>
+
+                                                <div class="control">
+                                                    <input class="input-text" name="otherFirstName" type="text" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="field required">
+                                                <label class="label">
+                                                    <span>Họ</span>
+                                                </label>
+
+                                                <div class="control">
+                                                    <input class="input-text" name="otherLastName" type="text" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="field required">
+                                                <label class="label">
+                                                    <span>Số điện thoại</span>
+                                                </label>
+
+                                                <div class="control">
+                                                    <input class="input-text" name="otherPhoneNumber" type="text" required>
+                                                    <span class="note">Nhân viên giao nhận LOTTE.VN sẽ liên hệ với SĐT này.</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="field required">
+                                                <label class="label">
+                                                        <span>E-mail</span>
+                                                    </label>
+
+                                                <div class="control">
+                                                    <input class="input-text" name="otherEmail" type="text" required>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="actions-toolbar" id="shipping-detail-buttons-container">
+                    <button type="button" type="submit" class="button action continue primary large">
+                        <span><span>Tiếp tục</span></span>
+                    </button>
+                    <a class="back-link underline-link" (click)="backToPreviousStep()">Chỉnh Sửa Giỏ hàng</a>
+                </div>
+
+            </form>
+        </li>
+    </div>
+</div>

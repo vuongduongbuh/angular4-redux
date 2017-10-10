@@ -1,0 +1,41 @@
+<div class="payment-method group-3 _active" style="display: block">
+    <div class="payment-method-title field choice">
+        <input type="radio" name="payment[method]" class="radio" id="local_atm" value="local_atm">
+        <label class="label" for="local_atm">
+            <span>Thẻ ATM nội địa đăng ký Internet Banking</span>
+            <span class="payment-view-detail">
+                <a target="_blank" href="#">chi tiết</a>
+                <span class="tooltip">Chi tiết</span>
+            </span>
+        </label>
+    </div>
+
+    <div class="payment-method-content">
+        <div class="field type bank-field">
+            <div class="control">
+                <label class="label" for="local_atm_bank_payment">
+                    <strong><span>Chọn ngân hàng của bạn</span>:</strong>
+                </label>
+
+                <div class="control bank-control">
+                    <select class="select"> 
+                        <option value="">Vui lòng chọn ngân hàng</option>
+                        <option value="VCB">VIETCOMBANK - Ngân hàng TMCP Ngoại Thương Việt Nam</option>
+                        <option value="TCB">TECHCOMBANK - Ngân hàng TMCP Kỹ Thương Việt Nam</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="use-payment message-general">
+            <p><span>Để thực hiện việc thanh toán, thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.</span></p>
+            <div class="description">
+                <span>Bạn có thể sẽ được chuyển hướng về cổng thanh </span>
+                <br>
+                <span>toán của ngân hàng để hoàn tất thanh toán.</span>
+            </div>
+        </div>
+
+        <lt-checkout-payment-address> </lt-checkout-payment-address>
+    </div>
+</div>

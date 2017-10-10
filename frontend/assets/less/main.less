@@ -1,0 +1,87 @@
+//Import custom old lottevn
+@import "./_lottevn.less";
+
+//Import pages
+@import "../../app/components/product/detail/detail.less";
+@import "../../app/layout/header/header.less";
+
+//Import custom library
+@import "./_bootstrap-modal.less";
+
+
+//Import custom scss
+@import "./_button.less";
+@import "./_icons.less";
+
+@font-face {
+	font-family: "luma-icons";
+	src: url("../fonts/luma-icons/Luma-Icons.eot?") format("eot"),
+	     url("../fonts/luma-icons/Luma-Icons.woff2") format("woff2"),
+	     url("../fonts/luma-icons/Luma-Icons.woff") format("woff"),
+	     url("../fonts/luma-icons/Luma-Icons.ttf") format("truetype"),
+	     url("../fonts/luma-icons/Luma-Icons.svg") format("svg");
+}
+
+@font-face {
+	font-family: "Noto Sans";
+	src: url("../fonts/notosans/NotoSans.eot?") format("eot"),
+	     url("../fonts/notosans/NotoSans.woff2") format("woff2"),
+	     url("../fonts/notosans/NotoSans.woff") format("woff"),
+	     url("../fonts/notosans/NotoSans.ttf") format("truetype"),
+	     url("../fonts/notosans/NotoSans.svg") format("svg");
+}
+
+@font-face {
+	font-family: "NotoSans-Bold";
+	src: url("../fonts/notosans/bold/NotoSans-Bold.eot?") format("eot"),
+	     url("../fonts/notosans/bold/NotoSans-Bold.woff2") format("woff2"),
+	     url("../fonts/notosans/bold/NotoSans-Bold.woff") format("woff"),
+	     url("../fonts/notosans/bold/NotoSans-Bold.ttf") format("truetype"),
+	     url("../fonts/notosans/bold/NotoSans-Bold.svg") format("svg");
+}
+
+//Custom slimscroll
+.slimscroll-wrapper {
+	width: 100% !important;
+	.slimscroll-bar {
+		height: 60px !important;
+		display: none !important;
+	}
+
+	&:hover {
+		.slimscroll-bar {
+			display: block !important;
+		}
+	}
+}
+
+//Custom UI slider
+.noUi-horizontal {
+	height: 6px;
+	background-color: #d7d7d7;
+	box-shadow: none !important;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 18px;
+    height: 18px;
+    left: -7px;
+    border-radius: 50%;
+    top: -7px;
+	&::after, &::before {
+		content: none !important;
+	}
+}
+
+.noUi-connect {
+	background-color: #767676;
+}
+
+body.body--block-scroll {
+	overflow: hidden !important;
+}
+
+.lt-loader {
+	position: fixed !important;
+}
+

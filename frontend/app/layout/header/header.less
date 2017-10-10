@@ -1,0 +1,51 @@
+.lt-header {
+    .view-notification {
+        visibility: hidden;
+        display: block !important;
+        width: 280px;
+        .notification-text {
+            font-size: 13px;
+            position: relative;
+            padding-right: 50px;
+
+            .btn-close-note {
+                text-transform: uppercase;
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 2;
+                color: #ed1b24;
+            }
+        }
+    }
+
+    .state {
+        &--visible {
+            visibility: visible !important;
+        }
+    }
+
+    &--fixed {
+        transition: all 3s;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 12000;
+        height: 40px;
+
+        &__search {
+            .block.block-search {
+                margin: 4px;
+                margin-left: 40px;
+            }
+        }
+
+        &__user-menu {
+            .user-menu {
+                padding-right: 53px; 
+                padding-top: 7px;
+            }
+        }
+    }
+}

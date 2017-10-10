@@ -1,0 +1,65 @@
+<app-loader *ngIf="isLoading"> </app-loader>
+<div class="lt-modal-dialog lt-login-modal">
+    <div class="lt-modal-dialog__header">
+        <h1 class="lt-modal-dialog__header--title">Đăng nhập</h1>
+        <button class="lt-modal-dialog__header--close" type="button" (click)="closeModal()">
+
+        </button>
+    </div>
+    <div class="lt-modal-dialog__content">
+        <div class="lt-modal-dialog__content--col-1">
+            <button class="lt-btn lt-btn--blue">
+                <span class="lt-icon lt-icon--facebook" > </span> 
+                <span>Đăng ký qua facebook</span>
+            </button>
+        </div>
+
+        <div class="lt-modal-dialog__content--line">
+            <span> Hoặc</span>
+        </div>
+
+        <div class="lt-modal-dialog__content--col-2">
+            <div class="lt-login-modal__not-logged-in" *ngIf="isNotLoggedIn">
+                <a (mouseover)="isForGuest = false" [ngClass]="{'is-active': !isForGuest}">Cho Thành Viên</a>
+                <a (mouseover)="isForGuest = true" [ngClass]="{'is-active': isForGuest}">Cho Khách</a>
+            </div>
+
+            <fieldset class="fieldset">
+                <div class="field email required form-row">
+                    <label class="label" for="email"><span>E-mail</span></label>
+                    <div class="control">
+                        <input placeholder="E-mail" value="" autocomplete="off" id="email" type="email" class="input-text">
+                    </div>
+                </div>
+                <div class="field password required form-row" *ngIf="!isForGuest">
+                    <label for="pass" class="label"><span>Mật khẩu</span></label>
+                    <div class="control">
+                        <input placeholder="Mật khẩu" type="password" autocomplete="off" class="input-text" data-validate="{required:true}" id="pass"
+                            title="Mật khẩu" data-msg-required="Vui lòng nhập mật khẩu ">
+                    </div>
+                </div>
+                <div class="actions-toolbar form-row" *ngIf="!isForGuest">
+                    <div class="primary"><input name="login[rememberEmail]" id="login[rememberEmail]" type="checkbox" aria-checked="true" checked="">
+                        <label for="login[rememberEmail]">Nhớ địa chỉ Email</label></div>
+                    <div class="secondary forgot-password-btn">
+                        <a class="action remind">
+                            <span>Quên mật khẩu?</span>
+                        </a>
+                    </div>
+                </div>
+
+                <button type="button" class="lt-btn lt-btn--red" (click)="login()" *ngIf="isForGuest"> 
+                    Tiến hành Thanh toán
+                </button>
+
+                <button type="button" class="lt-btn lt-btn--red" (click)="login()" *ngIf="!isForGuest"> 
+                    Đăng nhập
+                </button>
+
+                <div class="block-register-link register-btn">
+                    <p>Chưa là thành viên? <a (click)="openRegisterModal()">Đăng ký ngay</a></p>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="wbtab_instead_native lt-product-suggest">
+    <div class="block aw_wbtab" id="interested-wbtab">
+        <div class="block-title title">
+            <strong id="block-aw_wbtab-heading" role="heading" aria-level="2">Bạn cũng sẽ thích</strong>
+        </div>
+
+        <div class="block-content content">
+            <div class="products-list clearfix products-aw_wbtab">
+                <ul class="product-items owl-carousel owl-loaded owl-drag">
+                    <owl-carousel [options]="owlCarouselOptions" [carouselClasses]="['', 'row', 'sliding']">
+                        <div class="item" *ngFor="let image of [1, 2, 3, 4, 7, 8, 10, 22, 412, 4124 ,421 ,421,421,421,41];let i = index">
+                            <li class="item">
+                                <div class="item-product">
+                                    <div class="inner ">
+                                        <div class="product-image">
+                                            <a>
+                                                <img src="https://d1710i1dsqwesz.cloudfront.net/media/catalog/product/cache/1/small_image/152x198/beff4985b56e3afdbeabfc89641a4582/1/2/1273_1506330401_8_ao_1.jpg"
+                                                    width="152" height="198" alt="Áo Thun Nam Giovanni UT202-BL Màu Đen">
+                                            </a>
+                                        </div>
+                                        <div class="product-info">
+                                            <p class="product-name">
+                                                <a class="product-item-link" title="Áo Thun Nam Giovanni UT202-BL Màu Đen">Áo Thun Nam Giovanni UT202-BL Mà...</a>
+                                            </p>
+                                            <div class="price-box price-final_price" data-role="priceBox" data-product-id="464069">
+                                                <p class="special-price">
+                                                    <span class="current-price">            
+                                                    <span id="product-price-464069" class="final-price ">
+                                                        2.760.000&nbsp;Đ 
+                                                    </span>
+
+                                                    </span>
+                                                    <span class="discount-label">-20%</span>
+                                                </p>
+                                                <p class="old-price">
+                                                    <span id="old-price-464069" data-price-amount="3450000" data-price-type="oldPrice" class="final-price ">
+                                                        3.450.000&nbsp;Đ 
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </owl-carousel>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<owl-carousel [options]="{items: 3, dots: false, navigation: true}" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+    <div class="item" *ngFor="let image of [1, 2, 3, 4, 7, 8, 10, 22, 412, 4124 ,421 ,421,421,421,41];let i = index">
+        <div class="thumbnail-image">AAAAAAAAA</div>
+    </div>
+</owl-carousel>-->

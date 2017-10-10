@@ -1,0 +1,44 @@
+<div class="block block-search">
+      <div class="search-item-block">
+        <form id="search_mini_form" class="form minisearch" action="https://www.lotte.vn/catalogsearch/result/" method="get">
+
+          <input type="hidden" id="search-category" name="hFR[categories.level0][0]" value="">
+
+          <div id="menu-dropdown" class="">
+            <span class="show-item">Tất cả</span>
+            <div class="menu-toogle">
+              <div class="menu-toogle-inner">
+                <ul>
+                  <li class="search-item" data-cat=""><a href="#">Tất cả</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search query -->
+          <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;" id="algolia-autocomplete-tt">
+            <input id="search" type="text" name="q" class="input-text algolia-search-input aa-input" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="Tìm sản phẩm, thương hiệu bạn mong muốn" dir="auto" style="position: relative; vertical-align: top; width: 388px;">
+            <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: notosans; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+          </span>
+
+          <div class="actions">
+            <button type="button" title="Tìm kiếm" class="action search" id="search-submit">
+                <span>Tìm kiếm</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="algolia-autocomplete-container" style="position: relative;">
+          <span class="aa-dropdown-menu" style="position: absolute; top: -11px; left: auto; z-index: 100; display: none; right: -480px;">
+            <div class="autocomplete-wrapper">
+                <div class="category-wrapper">
+                    <div class="aa-dataset-0"></div>
+                </div>
+                <div class="product-wrapper">
+                    <div class="aa-dataset-products" style="min-height: 0px;"></div>
+                </div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>

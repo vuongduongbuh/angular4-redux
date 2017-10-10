@@ -1,0 +1,139 @@
+<div class="payment-method-billing-address">
+    <div class="customer-info-title sbilling-address-same-as-shipping-block choice">
+        <input type="checkbox" name="billing-address-same-as-shipping" [(ngModel)]="sameAddress" id="billing-address-same-as-shipping-cashondelivery">
+        <label for="billing-address-same-as-shipping-cashondelivery"><span>Địa chỉ thanh toán và chuyển hàng giống nhau</span></label>
+    </div>
+
+    <div class="bg-white-fog billing-address-option">
+        <div class="billing-address-details form-2col" *ngIf="sameAddress">
+            <span>Tên:</span> Duong Vuong
+            <br>
+            <span>Điện Thoại:</span> 12371821
+            <br>
+            <span>Đường:</span> asdaad
+            <br>
+            <span>Đường:</span> Ddasfasfsaf
+            <span>Đường:</span>wegwegewgwegw
+        </div>
+
+        <fieldset class="fieldset" *ngIf="!sameAddress">
+            <div class="billing-address-form">
+                <form class="form-2col">
+                    <fieldset id="billing-new-address-form" class="fieldset address form-group">
+                        <div class="field required" name="billingAddressvietin_gateway.firstname">
+                            <label class="label" for="NROY2LP">
+                                <span>Tên</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                            </div>
+                        </div>
+
+                        <div class="field required" name="billingAddressvietin_gateway.firstname">
+                            <label class="label" for="NROY2LP">
+                                <span>Họ</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                            </div>
+                        </div>
+
+                        <div class="field required" name="billingAddressvietin_gateway.firstname">
+                            <label class="label" for="NROY2LP">
+                                <span>Số điện thoại</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                                <span class="note">Nhân viên giao nhận LOTTE.VN sẽ liên hệ với SĐT này.</span>
+                            </div>
+                        </div>
+
+                        <div class="field required" name="billingAddressvietin_gateway.firstname">
+                            <label class="label" for="NROY2LP">
+                                <span>E-mail</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                            </div>
+                        </div>
+
+                        <div class="field" name="billingAddressvietin_gateway.is_home">
+                            <div class="control">
+                                <div class="choice field plchoice">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <input type="radio" checked="" class="checkbox plcheckbox" name="home_billing" value="1" id="home_MKC83E9">
+                                            <label class="label pllabel" for="home_MKC83E9">
+                                                <span data-bind="i18n: 'House'">Nhà</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" class="checkbox plcheckbox" name="home_billing" value="0" id="office_MKC83E9">
+                                            <label class="label pllabel" id="plen" for="office_MKC83E9">
+                                                <span>Văn phòng</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <fieldset class="field street required">
+                            <legend class="label">
+                                <span>Địa chỉ (tầng, số nhà, đường)</span>
+                            </legend>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" aria-describedby="notice-K52G5LG" id="K52G5LG">
+                            </div>
+                        </fieldset>
+
+                        <div class="field required">
+                            <label class="label"> 
+                                <span>Tỉnh / Thành phố </span>
+                            </label>
+
+                            <div class="control">
+                                <select class="select" name="region_id"> 
+                                    <option value="">Chọn tỉnh/ thành phố</option>
+                                    <option value="1087">Hà Nội</option>
+                                    <option value="1086">Hồ Chí Minh</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="NROY2LP">
+                                <span>Quận/Huyện</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="NROY2LP">
+                                <span>Phường/Xã</span>
+                            </label>
+                            <div class="control">
+                                <input class="input-text" type="text" placeholder="" id="NROY2LP">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button class="action dark action-update" type="button">
+                    <span>Cập nhật</span>
+                </button>
+                    <button class="action dark action-cancel" type="button">
+                    <span>Từ bỏ</span>
+                </button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+
+</div>

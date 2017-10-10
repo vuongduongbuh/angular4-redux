@@ -1,0 +1,85 @@
+.lt-checkout-cart {
+    padding-bottom: 50px;
+    .checkout-methods-items {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 50px;
+    }
+
+    &__table {
+        a {
+            cursor: pointer;
+        }
+
+        .col {
+            text-align: left !important;
+
+            &.item {
+                padding-left: 16px !important;
+            }
+        }
+
+        tbody {
+            .col {
+                &.item {
+                    display: flex;
+                    align-items: center;
+                    .product-item-details {
+                        padding-left: 20px;
+                        a {
+                            margin-top: 0;
+                        }
+                    }
+                }
+
+                &.supplier {
+                    text-align: left !important;
+                }
+
+                &.price {
+                    .discount {
+                        &--decrease {
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 6px;
+                                height: 6px;
+                                border-left: 1px solid #ed1b24;
+                                border-bottom: 1px solid #ed1b24;
+                                position: absolute;
+                                left: -12px;
+                                top: 9px;
+                                z-index: 2;
+                                -ms-transform: rotate(-45deg);
+                                -webkit-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                            }
+
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 9px;
+                                background-color: #ed1b24;
+                                z-index: 2;
+                                position: absolute;
+                                left: -9px;
+                                top: 7px;
+                            }
+                        }
+                    }
+                }
+
+                &.subtotal {
+                    padding-left: 16px;
+                    .wishlist {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+ 
+.cart-empty {
+    margin-bottom: 50px;
+}

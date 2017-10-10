@@ -1,0 +1,119 @@
+<aside class="modal-custom opc-sidebar opc-summary-wrapper custom-slide lt-checkout-order">
+    <div class="modal-inner-wrap">
+        <div class="modal-content">
+            <div id="opc-sidebar">
+                <div class="opc-block-shipping-information" *ngIf="!hideShippingInfo"> 
+                    <div class="shipping-information"> 
+                        <div class="ship-to"> 
+                            <div class="shipping-information-title"> 
+                                <span>Thông tin giao hàng</span>
+                            </div>
+
+                            <div class="shipping-information-content"> 
+                                <span class="name"> {{(cartShippingInfo$ | async)?.firstName + ' ' + (cartShippingInfo$ | async)?.lastName}}</span>
+                                <span class="phone">{{(cartShippingInfo$ | async)?.telephone}}</span>
+                                <span> {{(cartShippingInfo$ | async)?.address}}</span>
+                            </div>
+
+                            <button class="action action-edit" type="button" (click)="backToPreviousStep()"> 
+                                <span>Thay đổi </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opc-block-summary">
+                    <div class="block items-in-cart active">
+                        <div class="title clearfix">
+                            <div class="number-item pull-right"> ({{(cartInfo$ | async).items_qty}} sản phẩm)</div>
+                            <strong><span> Đơn hàng </span></strong>
+                        </div>
+
+                        <div class="content minicart-items">
+                            <div class="minicart-items-wrapper overflowed">
+                                <table class="minicart-items">
+                                    <thead>
+                                        <tr>
+                                            <th><span>Tên sản phẩm</span></th>
+                                            <th><span>SL</span></th>
+                                            <th><span>Giá</span></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="cart-crollbar" slimScroll [options]="slimScrollOptions">
+                                        <tr class="product-item product" *ngFor="let item of cartItems$ | async">
+                                            <td class="product-item-inner">
+                                                <div class="product-item-name-block">
+                                                    <strong class="product-item-name">{{item.name}}</strong>
+                                                    <!--<div class="product-info">
+                                                        <div class="product options">
+                                                            <div class="content">
+                                                                <dl class="item-options">
+                                                                    <span class="values">30</span>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                    </div>-->
+                                                    <br>
+                                                    <!--<strong> Quà tặng: </strong>
+                                                    <br>
+                                                    <span data-bind="html: title">Áo Thun Nam Trị Giá 120.000 Đ (Màu ngẫu nhiên) cho đơn hàng trên 300.000 Đ</span>
+                                                    <span data-bind="html: title">Áo Thun Nam Trị Giá 120.000 Đ (Màu ngẫu nhiên) cho đơn hàng trên 300.000 Đ</span>-->
+                                                </div>
+                                            </td>
+
+                                            <td class="number-item">{{item.qty}}</td>
+                                            <td>
+                                                <div class="subtotal">
+                                                    <span class="price-including-tax">
+                                                        <span class="cart-price"> 
+                                                            <span class="price"> 
+                                                                {{item.row_total | number:'3.0-0'}} Đ
+                                                            </span>
+                                                    </span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="data table table-totals">
+                        <tbody>
+                            <tr class="totals sub">
+                                <th class="mark">Giá trị Giỏ Hàng</th>
+                                <td class="amount">
+                                    <span class="price">3.767.000&nbsp;Đ</span>
+                                </td>
+                            </tr>
+
+                            <tr class="totals shipping excl">
+                                <th class="mark" scope="row">
+                                    <span class="label">Thông tin giao hàng</span>
+                                    <span class="value"></span>
+                                </th>
+                                <td class="amount">
+                                    <span class="price">0&nbsp;Đ</span>
+                                </td>
+                            </tr>
+
+                            <tr class="grand totals">
+                                <th colspan="2" class="mark">
+                                    <div>
+                                        <strong>Tổng đơn hàng</strong> <span class="note">(Đã bao gồm VAT)</span>
+                                    </div>
+                                    <div class="amount">
+                                        <strong><span class="price">3.767.000&nbsp;Đ</span></strong>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

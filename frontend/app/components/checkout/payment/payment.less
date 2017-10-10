@@ -1,0 +1,63 @@
+.lt-payment {
+    &__methods {
+        li label {
+            &.lt-payment-option {
+                border-bottom: 0 !important;
+                color: #999 !important;
+
+                &.active {
+                    border-bottom: solid 4px #ed1b24 !important;
+                    color: #444 !important;
+                }
+
+                &--cash {
+                    height: 116px;
+                    &::before {
+                        background-position: 0 -253px !important;
+                    }
+
+                    &.active {
+                        &::before {
+                            background-position: 0 -317px !important;
+                        }
+                    }
+                }
+
+                &--card {
+                    &.active {
+                        &::before {
+                            background-position: -88px -317px !important;
+                        }
+                    }
+                }
+
+                &--atm {
+                    &.active {
+                        &::before {
+                            background-position: -163px -317px !important;
+                        }
+                    }
+                }
+
+                &--installment {
+                    &.active {
+                        &::before {
+                            background-position: -235px -317px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__actions-toolbar {
+        padding-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .button-back {
+            padding: 0 !important;
+        }
+    }
+}

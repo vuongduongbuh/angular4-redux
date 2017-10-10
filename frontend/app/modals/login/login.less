@@ -1,0 +1,44 @@
+.lt-login-modal {
+
+    .actions-toolbar {
+        margin-bottom: 20px;
+    }
+
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .block-register-link {
+        display: flex;
+        padding-top: 35px;
+        justify-content: flex-end;
+    }
+
+    &__not-logged-in {
+        margin: 12px 0;
+        display: flex;
+        a {
+            width: 50%;
+            text-decoration: none;
+            padding: 5px;
+            text-align: center;
+            border-top: 1px solid #e3e3e3;
+            border-bottom: 1px solid #999;
+            border-left: 1px solid #e3e3e3;
+            background: #f8f8f8;
+            font-size: 13px;
+            font-family: 'notosans';
+            text-transform: none;
+            color: #c2c2c2;
+            
+            &.is-active {
+                border: 1px solid #999;
+                border-bottom-color: #fff;
+                background: #fff;
+                font-weight: bold;
+                color: #000;
+            }
+        }
+    }
+}

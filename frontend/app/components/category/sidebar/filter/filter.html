@@ -1,0 +1,316 @@
+<div class="lt-filter">
+    <!--Loc da chon -->
+    <div class="lt-filter__item lt-filter__selected">
+        <div class="lt-filter__title">
+            <h3> Lọc</h3>
+            <!--<span class="lt-filter__title--expand"> 
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>-->
+            <span class="lt-filter__title--close"> 
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="lt-filter__content">
+            <div class="lt-filter__content--remove">
+                <a> Xóa tất cả</a>
+            </div>
+
+            <div>
+                <a class="a-option a-option--choosen"> 
+                    Áo thun <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Danh muc -->
+    <div class="lt-filter__item lt-filter__categories">
+        <div class="lt-filter__title">
+            <h3> Danh mục</h3>
+            <!--<span class="lt-filter__title--expand"> 
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>-->
+            <span class="lt-filter__title--close"> 
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="lt-filter__content">
+            <div>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kích cỡ-->
+    <div class="lt-filter__item lt-filter__size">
+        <div class="lt-filter__title">
+            <h3> Kích cỡ</h3>
+            <!--<span class="lt-filter__title--expand"> 
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>-->
+            <span class="lt-filter__title--close"> 
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="lt-filter__content clearfix">
+            <div>
+                <a class="lt-filter__size--item"> 
+                    N/A <span></span>
+                </a>
+
+                <a class="lt-filter__size--item"> 
+                    S <span></span>
+                </a>
+
+                <a class="lt-filter__size--item"> 
+                    M <span></span>
+                </a>
+
+                <a class="lt-filter__size--item"> 
+                    L <span></span>
+                </a>
+
+                <a class="lt-filter__size--item"> 
+                    XL <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Giá -->
+    <div class="lt-filter__item lt-filter__price">
+        <div class="lt-filter__title">
+            <h3> Giá</h3>
+            <!--<span class="lt-filter__title--expand"> 
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>-->
+            <span class="lt-filter__title--close"> 
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="lt-filter__content">
+            <div class="lt-filter__price--range">
+                <input type="text" [(ngModel)]="filterPriceRange[0]" (change)="changeSlider()">
+                <span><i class="fa fa-minus" aria-hidden="true"></i></span>
+                <input type="text" [(ngModel)]="filterPriceRange[1]">
+            </div>
+
+
+            <div class="lt-filter__price--slider">
+                <nouislider #mySlider [config]="uiSliderConfig" [(ngModel)]="filterPriceRange"></nouislider>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thương hiệu -->
+    <div class="lt-filter__item lt-filter__brand">
+        <div class="lt-filter__title">
+            <h3> Thương hiệu</h3>
+            <!--<span class="lt-filter__title--expand"> 
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>-->
+            <span class="lt-filter__title--close"> 
+                <i class="fa fa-minus" aria-hidden="true"></i>
+            </span>
+        </div>
+
+        <div class="lt-filter__content">
+            <div class="lt-filter__brand--search">
+                <input type="text" placeholder="Tìm thương hiệu...">
+            </div>
+
+            <div class="lt-filter__content--has-slimscroll" slimScroll [options]="slimScrollOptions">
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+
+                <a class="a-option"> 
+                    Áo thun tay dài <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<app-loader *ngIf="cartIsLoading$ | async"> </app-loader>
+<div class="page-wrapper checkout-index-index checkout-cart-index lt-checkout">
+    <header class="page-header">
+        <div class="header-panel">
+            <div class="custom-header-cart">
+                <ul class="header-cart">
+                    <li class="home">
+                        <div class="links">
+                            <div class="img">
+                                <a href="/">
+                                    <img src="https://www.lotte.vn/static/version1505435848/frontend/SM/Lottevec/vi_VN/images/logo-white.png" alt="logo lotte.vn"></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="phone-number">
+                        <p class="phone-number-txt">Hotline: 1900 1907</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <div id="maincontent" class="l-container page-main" style="padding-top: 172px">
+            <div class="page-title-wrapper" *ngIf="currentStep == 5">
+                <h1 class="page-title">
+                    <span class="base" data-ui-id="page-title-wrapper">Hoàn thành đặt hàng</span> </h1>
+            </div>
+
+            <div class="columns">
+                <div class="line-patt"></div>
+                <ul class="steps-wizard" *ngIf="currentStep != 5">
+                    <li class="step-cart" (click)="selectCheckoutStep(1)" [ngClass]="{'active': currentStep == 1}"><span>Giỏ hàng</span></li>
+                    <li class="step-shipping" (click)="selectCheckoutStep(2)" [ngClass]="{'active': currentStep == 2}"><span>Thông tin giao hàng</span></li>
+                    <li class="step-delivery" (click)="selectCheckoutStep(3)" [ngClass]="{'active': currentStep == 3}"><span>Giao hàng</span></li>
+                    <li class="step-payment" (click)="selectCheckoutStep(4)" [ngClass]="{'active': currentStep == 4}"><span>Thanh toán</span></li>
+                </ul>
+
+                <lt-checkout-cart [isLoggedIn]="isLoggedIn$ | async" *ngIf="currentStep == 1"> </lt-checkout-cart>
+                <lt-checkout-shipping *ngIf="currentStep == 2"> </lt-checkout-shipping>
+                <lt-checkout-deliver *ngIf="currentStep == 3"> </lt-checkout-deliver>
+                <lt-checkout-payment *ngIf="currentStep == 4"> </lt-checkout-payment>
+                <lt-checkout-success *ngIf="currentStep == 5"> </lt-checkout-success>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer content">
+            <div>
+                <div class="widget block block-static-block">
+
+                </div>
+            </div>
+            <div class="logos">
+                <div class="col">
+                    <h3>Cách thức thanh toán</h3>
+                    <p><img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-visa.png" alt="">
+                        <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-master.png" alt=""> <img
+                            src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-jcb.png" alt="">
+                        <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-viettin.png" alt=""> <img
+                            src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-cash.png" alt=""></p>
+                </div>
+                <div class="col">
+                    <h3>Dịch vụ giao hàng</h3>
+                    <p><img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-ghn.png" alt="">
+                        <img src="https://d1710i1dsqwesz.cloudfront.net/media/wysiwyg/footer/logo-vnpost.png" alt=""></p>
+                </div>
+            </div>
+            <div>
+                <div class="widget block block-static-block">
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+
+</div>

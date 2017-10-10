@@ -1,0 +1,85 @@
+<div class="checkout-container" id="checkout">
+    <div class="opc-wrapper">
+        <ol class="opc" id="checkoutSteps">
+            <li id="delivery" class="checkout-shipping-method">
+                <div class="checkout-shipping-method">
+                    <div id="shipping-items">
+                        <table class="table-checkout-method">
+                            <thead>
+                                <tr>
+                                    <th class="col col-vendor">Người bán hàng</th>
+                                    <th class="col col-item">Sản phẩm</th>
+                                    <th class="col col-qty">Số lượng</th>
+                                    <th class="col col-total">Tổng giá tiền</th>
+                                    <th class="col col-carrier">Nhà vận chuyển</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr class="new-vendor odd">
+                                    <td class="col supplier logo-vendor">
+                                        <div class="vendor-wrap">
+                                            <span class="vendor-name">GLADO </span>
+                                        </div>
+                                    </td>
+
+                                    <td class="item-info">
+                                        <div class="media clearfix">
+                                            <div class="media-left">
+                                                <span> 
+                                                    <img src="https://d1710i1dsqwesz.cloudfront.net/media/catalog/product/cache/1/thumbnail/75x98/beff4985b56e3afdbeabfc89641a4582/5/_/5_1.png">
+                                                </span>
+                                            </div>
+
+                                            <div class="media-body">
+                                                <p>
+                                                    <span>GLADO</span>
+                                                </p>
+
+                                                <h4 class="media-heading">Balo Canvas Phối Da Nam Glado BLG23X Xanh Dương</h4>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="qty">
+                                        1
+                                    </td>
+
+                                    <td class="total-money">
+                                        <span class="price"> 
+                                            299.000 Đ
+                                        </span>
+                                    </td>
+
+                                    <td class="shipping-option">
+                                        <span> 
+                                            <input type="radio" checked>
+                                            <label class="shipping-method"> 
+                                                Standard - Miễn phí 
+                                                <span>Nhận hàng 4 - 7 ngày</span>
+                                        </label>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="checkout-step-shipping_method" class="step-content">
+                        <form class="form methods-shipping" id="co-shipping-method-form">
+                            <div class="actions-toolbar" id="shipping-method-buttons-container">
+                                <button type="button" (click)="goToNextStep()" class="button action continue primary">
+                                    <span><span>Tiếp tục</span></span>
+                                </button>
+                                <button type="button" (click)="backToPreviousStep()" class="back-link button-back action">
+                                    <span><span>Quay lại</span></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+    <lt-checkout-order> </lt-checkout-order>
+</div>
